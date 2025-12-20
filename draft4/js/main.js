@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Check if section is in viewport
         if (rect.top < windowHeight && rect.bottom > 0) {
-          // Calculate parallax offset
-          const offset = (scrolled - sectionTop + windowHeight) * 0.3;
+          // Calculate parallax offset with reduced speed and pixel rounding
+          const offset = Math.round((scrolled - sectionTop + windowHeight) * 0.15);
           section.style.backgroundPosition = `center ${offset}px`;
         }
       });

@@ -485,14 +485,11 @@ nav {
   background-repeat: no-repeat;
   background-size: 500px auto;
   position: relative;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   will-change: background-position;
-  transition: background-position 0.1s ease-out;
 }
 
 .potential-section-parallax::before {
@@ -690,7 +687,6 @@ nav {
   background-size: 400px auto;
   position: relative;
   will-change: background-position;
-  transition: background-position 0.1s ease-out;
 }
 
 .benefits-section-parallax::before {
