@@ -1,0 +1,1075 @@
+/* eLux Medical - Draft 3: Tech-Forward Scientific Design */
+/* No gradients, geometric precision, nanoparticle patterns, brutalist elements */
+
+/* Color Palette */
+:root {
+  --navy-blue: #1B3D5F;
+  --gold: #E6A532;
+  --medium-blue: #4A7BA7;
+  --light-blue: #5B9BD5;
+  --white: #FFFFFF;
+  --off-white: #FAFBFC;
+  --dark-gray: #1A1A1A;
+  --text-gray: #4A4A4A;
+  --border-gray: #E0E0E0;
+  --tech-accent: #00D9FF;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--dark-gray);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: var(--white);
+}
+
+/* Typography - Technical precision */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 4rem;
+  color: var(--dark-gray);
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--navy-blue);
+  position: relative;
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--gold);
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--navy-blue);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  color: var(--text-gray);
+  line-height: 1.7;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+}
+
+.gold-text {
+  color: var(--gold);
+}
+
+/* Header - Sharp, technical */
+header {
+  background-color: var(--white);
+  border-bottom: 3px solid var(--navy-blue);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1.25rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-container::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  width: 200px;
+  height: 3px;
+  background-color: var(--gold);
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation - Grid-based precision */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0;
+}
+
+.nav-links li {
+  border-left: 1px solid var(--border-gray);
+  padding: 0 1.5rem;
+}
+
+.nav-links li:last-child {
+  border-right: 1px solid var(--border-gray);
+}
+
+.nav-links a {
+  color: var(--navy-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: 2px solid var(--navy-blue);
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background-color: var(--navy-blue);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Hero Section - Nanoparticle dot pattern */
+.hero {
+  background-color: var(--navy-blue);
+  color: var(--white);
+  padding: 6rem 3rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 8px solid var(--gold);
+}
+
+/* Nanoparticle dot pattern background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle, var(--gold) 1.5px, transparent 1.5px),
+    radial-gradient(circle, var(--gold) 1px, transparent 1px);
+  background-size: 60px 60px, 40px 40px;
+  background-position: 0 0, 30px 30px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Geometric corner accents */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 150px 150px 0;
+  border-color: transparent rgba(230, 165, 50, 0.2) transparent transparent;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+  font-weight: 900;
+  line-height: 1;
+  border-left: 8px solid var(--gold);
+  padding-left: 2rem;
+}
+
+.hero .gold-text {
+  display: block;
+  font-size: 3.5rem;
+  margin-top: 1rem;
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.hero-bullets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 1000px;
+}
+
+.hero-bullet {
+  font-size: 1rem;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+}
+
+.hero-bullet::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+}
+
+/* Section Styles - Grid precision */
+.section {
+  padding: 5rem 3rem;
+  position: relative;
+}
+
+.section-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  position: relative;
+  padding-left: 40px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  max-width: 800px;
+}
+
+.section-gray {
+  background-color: var(--off-white);
+  position: relative;
+}
+
+/* Geometric accent lines */
+.section-gray::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--navy-blue),
+    var(--navy-blue) 50px,
+    var(--gold) 50px,
+    var(--gold) 60px
+  );
+}
+
+/* Mission Grid - Brutalist cards */
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.mission-card {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border: 3px solid var(--navy-blue);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.mission-card::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--gold);
+}
+
+.mission-card::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent var(--gold) transparent;
+}
+
+.mission-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 var(--navy-blue);
+}
+
+.mission-card h3 {
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mission-card p {
+  color: var(--text-gray);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.card-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card-icon svg {
+  width: 100%;
+  height: 100%;
+  color: var(--navy-blue);
+}
+
+/* Comparison Section - Existing vs eLux */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.comparison-card {
+  background-color: var(--white);
+  padding: 3rem 2.5rem;
+  border: 3px solid var(--navy-blue);
+  position: relative;
+}
+
+.comparison-card.challenges::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-color: #C62828;
+}
+
+.comparison-card.solution::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-color: var(--gold);
+}
+
+.comparison-card h3 {
+  color: var(--navy-blue);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.comparison-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-gray);
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.6;
+}
+
+.comparison-list li::before {
+  content: '✗';
+  font-size: 1.5rem;
+  color: #C62828;
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.comparison-card.solution .comparison-list li::before {
+  content: '✓';
+  color: #2E7D32;
+}
+
+/* Market Potential Section with JS Parallax */
+.potential-section-parallax {
+  background-image: url('../images/fat_cellspng.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 500px auto;
+  position: relative;
+}
+
+.potential-section-parallax::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  z-index: 0;
+}
+
+.potential-section-parallax .section-container {
+  position: relative;
+  z-index: 1;
+}
+
+.market-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.market-stats-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.market-stats-column.highlight {
+  background-color: var(--navy-blue);
+  padding: 3rem;
+  border: 3px solid var(--navy-blue);
+}
+
+.market-stat-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.stat-number {
+  width: 60px;
+  height: 60px;
+  background-color: var(--gold);
+  color: var(--navy-blue);
+  font-size: 1.3rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.market-stat-item p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--dark-gray);
+  margin-bottom: 0;
+}
+
+.market-stats-column.highlight .market-stat-item p {
+  color: var(--white);
+}
+
+/* Patient Image Section at Bottom - Mobile Only */
+.patient-image-section {
+  display: none;
+  min-height: 650px;
+  background-image: url('../images/patient2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.patient-image-section .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(27, 61, 95, 0.3);
+  z-index: 0;
+}
+
+/* Consulting Support Section */
+.consulting-card {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background-color: var(--white);
+  padding: 3rem;
+  border: 3px solid var(--navy-blue);
+  position: relative;
+  margin-top: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.consulting-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-color: var(--gold);
+}
+
+.consulting-image {
+  flex-shrink: 0;
+}
+
+.consulting-image img {
+  width: 200px;
+  height: auto;
+  border: 3px solid var(--navy-blue);
+  box-shadow: 6px 6px 0 var(--gold);
+}
+
+.consulting-content h3 {
+  color: var(--navy-blue);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-transform: none;
+  letter-spacing: 0px;
+}
+
+.consulting-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+}
+
+/* Procedure Steps Section */
+.procedure-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.procedure-step {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--white);
+  border: 2px solid var(--navy-blue);
+  position: relative;
+}
+
+.step-image {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background-color: var(--off-white);
+  border-bottom: 3px solid var(--gold);
+}
+
+.step-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.procedure-step h3 {
+  color: var(--navy-blue);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.procedure-step p {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* Benefits Section - Hexagonal grid concept with JS parallax background */
+.benefits-section-parallax {
+  background-image: url('../images/patient2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 400px auto;
+  position: relative;
+}
+
+.benefits-section-parallax::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(250, 251, 252, 0.92);
+  z-index: 0;
+}
+
+.benefits-section-parallax .section-container {
+  position: relative;
+  z-index: 1;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.benefit-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--white);
+  border: 2px solid var(--border-gray);
+  position: relative;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% 100%,
+    20px 100%,
+    0 calc(100% - 20px)
+  );
+  transition: all 0.2s ease;
+}
+
+.benefit-card:hover {
+  border-color: var(--gold);
+  background-color: var(--off-white);
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--navy-blue);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.benefit-icon svg {
+  width: 100%;
+  height: 100%;
+  color: var(--gold);
+}
+
+.benefit-card h3 {
+  color: var(--navy-blue);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.benefit-card p {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.contact-card {
+  background-color: var(--white);
+  padding: 3rem;
+  border: 3px solid var(--navy-blue);
+  position: relative;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-color: var(--gold);
+}
+
+.contact-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-photo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 3px solid var(--navy-blue);
+  border-radius: 2px;
+  box-shadow: 4px 4px 0 var(--gold);
+}
+
+.contact-card h3 {
+  color: var(--navy-blue);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+.contact-card .title {
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-info {
+  margin-top: 2rem;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.contact-info p::before {
+  content: '>';
+  font-size: 1rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.contact-info a {
+  color: var(--medium-blue);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.contact-info a:hover {
+  border-bottom-color: var(--gold);
+}
+
+/* Footer - Technical */
+footer {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  padding: 2.5rem 3rem;
+  border-top: 4px solid var(--gold);
+}
+
+.footer-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  opacity: 0.95;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+footer a:hover {
+  border-bottom-color: var(--gold);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Patient image section - show on mobile only */
+  .patient-image-section {
+    display: flex;
+    min-height: 400px;
+    background-size: cover;
+  }
+
+  .potential-section-parallax {
+    background-size: 300px auto;
+  }
+
+  .potential-section-parallax::before {
+    background-color: rgba(255, 255, 255, 0.88);
+  }
+
+  /* Market stats grid on mobile */
+  .market-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .market-stats-column.highlight {
+    padding: 2rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    transition: left 0.3s ease;
+    border-top: 3px solid var(--navy-blue);
+    padding: 0;
+  }
+
+  .nav-links li {
+    padding: 1.5rem 2rem;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-gray);
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .header-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    border-left: 4px solid var(--gold);
+    padding-left: 1rem;
+  }
+
+  .hero .gold-text {
+    font-size: 2rem;
+  }
+
+  .hero-bullets {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h2::before {
+    left: -20px;
+    width: 3px;
+  }
+
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-header {
+    padding-left: 20px;
+  }
+
+  .mission-grid,
+  .benefits-grid,
+  .contact-grid,
+  .comparison-grid,
+  .procedure-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Mobile adjustments for contact photos */
+  .contact-card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .contact-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Mobile adjustments for consulting support */
+  .consulting-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .consulting-image img {
+    width: 150px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* iPad scaling for parallax background */
+  .benefits-section-parallax {
+    background-size: 300px auto;
+    background-position: center right;
+  }
+
+  /* Reduce overlay opacity on iPad so image is more visible */
+  .benefits-section-parallax::before {
+    background-color: rgba(250, 251, 252, 0.88);
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .hero .gold-text {
+    font-size: 2.75rem;
+  }
+
+  .hero-bullets {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-grid,
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .procedure-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
