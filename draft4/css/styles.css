@@ -36,7 +36,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
-  text-transform: uppercase;
 }
 
 h1 {
@@ -71,7 +70,7 @@ p {
   font-size: 1rem;
   color: var(--text-gray);
   line-height: 1.7;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-weight: 300;
 }
 
@@ -109,7 +108,7 @@ header {
 }
 
 .logo img {
-  height: 50px;
+  height: 65px;
   width: auto;
 }
 
@@ -142,7 +141,7 @@ nav {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: color 0.2s ease;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 .nav-links a:hover {
@@ -179,17 +178,43 @@ nav {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Hero Section - Nanoparticle dot pattern */
+/* Hero Section - Default background */
 .hero {
   background-color: var(--navy-blue);
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
   color: var(--white);
-  padding: 6rem 3rem;
+  padding: 4.8rem 3rem;
   position: relative;
   overflow: hidden;
-  border-bottom: 8px solid var(--gold);
 }
 
-/* Nanoparticle dot pattern background */
+/* Index page hero with doctor-patient background */
+.hero-index {
+  background-image: url('../images/doctor-patient.png');
+}
+
+/* Motivation page hero with motivation background */
+.hero-motivation {
+  background-image: url('../images/motivation.jpg');
+  background-position: 100% 30%;
+  background-size: 50%;
+}
+
+.hero-motivation::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, var(--navy-blue) 0%, transparent 35%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dark overlay for text readability */
 .hero::before {
   content: '';
   position: absolute;
@@ -197,12 +222,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image:
-    radial-gradient(circle, var(--gold) 1.5px, transparent 1.5px),
-    radial-gradient(circle, var(--gold) 1px, transparent 1px);
-  background-size: 60px 60px, 40px 40px;
-  background-position: 0 0, 30px 30px;
-  opacity: 0.15;
+  background: linear-gradient(135deg, rgba(20, 40, 80, 0.65) 0%, rgba(20, 40, 80, 0.55) 100%);
   pointer-events: none;
 }
 
@@ -229,7 +249,6 @@ nav {
 .hero h1 {
   font-size: 3.5rem;
   color: var(--white);
-  text-transform: uppercase;
   margin-bottom: 2rem;
   letter-spacing: -2px;
   font-weight: 900;
@@ -256,7 +275,7 @@ nav {
 
 .hero-bullet {
   font-size: 1rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Inter', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 1rem;
@@ -317,13 +336,7 @@ nav {
   left: 0;
   width: 100%;
   height: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--navy-blue),
-    var(--navy-blue) 50px,
-    var(--gold) 50px,
-    var(--gold) 60px
-  );
+  background: transparent;
 }
 
 /* Mission Grid - Brutalist cards */
@@ -403,6 +416,90 @@ nav {
   color: var(--navy-blue);
 }
 
+/* Motivation Page - Vertical Card Layout */
+.motivation-mission-section {
+  position: relative;
+}
+
+.motivation-mission-section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  bottom: 10%;
+  width: 4px;
+  background-color: var(--medium-blue);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.motivation-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+.motivation-cards .mission-card {
+  border: none;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.motivation-cards .mission-card::before,
+.motivation-cards .mission-card::after {
+  display: none;
+}
+
+.motivation-cards .mission-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.motivation-cards .card-content {
+  flex: 1;
+}
+
+.motivation-cards .mission-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.motivation-cards .mission-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.motivation-cards .card-icon {
+  display: none;
+}
+
+.card-image-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 15px;
+}
+
+.card-image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* Comparison Section - Existing vs eLux */
 .comparison-grid {
   display: grid;
@@ -438,11 +535,21 @@ nav {
   background-color: var(--gold);
 }
 
+.comparison-card.solution::after {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 80px;
+  bottom: 40px;
+  width: 2px;
+  background-color: var(--gold);
+  z-index: 0;
+}
+
 .comparison-card h3 {
   color: var(--navy-blue);
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   text-align: center;
 }
@@ -460,7 +567,7 @@ nav {
   margin-bottom: 1.5rem;
   font-size: 1rem;
   color: var(--text-gray);
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
 }
 
@@ -471,11 +578,21 @@ nav {
   font-weight: 700;
   flex-shrink: 0;
   line-height: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .comparison-card.solution .comparison-list li::before {
   content: '✓';
   color: #2E7D32;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
 }
 
 /* Market Potential Section with JS Parallax */
@@ -545,7 +662,7 @@ nav {
   justify-content: center;
   border-radius: 50%;
   flex-shrink: 0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 .market-stat-item p {
@@ -582,54 +699,164 @@ nav {
   z-index: 0;
 }
 
-/* Consulting Support Section */
-.consulting-card {
+/* Motivation Image Section */
+.motivation-image-section {
+  min-height: 500px;
+  background-image: url('../images/motivation.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 3rem;
-  background-color: var(--white);
-  padding: 3rem;
-  border: 3px solid var(--navy-blue);
-  position: relative;
-  margin-top: 3rem;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: background-position;
 }
 
-.consulting-card::before {
-  content: '';
+.motivation-image-section .image-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 8px;
-  background-color: var(--gold);
+  bottom: 0;
+  background-color: rgba(27, 61, 95, 0.2);
+  z-index: 0;
 }
 
-.consulting-image {
+/* Executive Leadership Section */
+.exec-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 3rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.exec-card {
+  position: relative;
+  background-color: var(--white);
+  border: 2px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+}
+
+.exec-header {
+  background-color: var(--gold);
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+}
+
+.exec-header h3 {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.exec-content {
+  padding: 2rem 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.exec-photo-inner {
+  width: 100px;
+  height: 100px;
+  border: 3px solid var(--gold);
+  overflow: hidden;
   flex-shrink: 0;
 }
 
-.consulting-image img {
-  width: 200px;
-  height: auto;
-  border: 3px solid var(--navy-blue);
-  box-shadow: 6px 6px 0 var(--gold);
+.exec-photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.consulting-content h3 {
-  color: var(--navy-blue);
+.exec-text {
+  flex: 1;
+  text-align: center;
+}
+
+.exec-years {
   font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+  margin-bottom: 1rem;
+}
+
+.exec-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+/* Medical Advisory Team Section */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.team-card {
+  background-color: var(--white);
+  border: 3px solid var(--gold);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--off-white);
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.team-name {
+  background-color: var(--medium-blue);
+  padding: 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.team-name h3 {
+  color: var(--white);
+  font-size: 1.3rem;
+  margin-bottom: 0;
   text-transform: none;
   letter-spacing: 0px;
+  font-weight: 700;
 }
 
-.consulting-content p {
-  font-size: 1rem;
-  line-height: 1.8;
+.team-content {
+  padding: 2rem 1.5rem;
+  flex: 1;
+}
+
+.team-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--text-gray);
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Procedure Steps Section */
@@ -735,21 +962,24 @@ nav {
 }
 
 .benefit-icon {
-  width: 60px;
-  height: 60px;
-  background-color: var(--navy-blue);
-  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  width: 78px;
+  height: 78px;
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
 }
 
 .benefit-icon svg {
   width: 100%;
   height: 100%;
   color: var(--gold);
+}
+
+.benefit-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .benefit-card h3 {
@@ -821,7 +1051,7 @@ nav {
   font-weight: 600;
   margin-bottom: 2rem;
   display: block;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Inter', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -837,7 +1067,7 @@ nav {
   margin-bottom: 1rem;
   font-size: 0.95rem;
   color: var(--dark-gray);
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 .contact-info p::before {
@@ -877,7 +1107,7 @@ footer {
 footer p {
   margin-bottom: 0.5rem;
   font-size: 0.85rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Inter', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #FFFFFF;
@@ -957,7 +1187,21 @@ footer a:hover {
   }
 
   .hero {
-    padding: 4rem 1.5rem;
+    padding: 3.2rem 1.5rem;
+    background-position: 85% center;
+  }
+
+  .hero::before {
+    background: linear-gradient(135deg, rgba(20, 40, 80, 0.75) 0%, rgba(20, 40, 80, 0.70) 100%);
+  }
+
+  .hero-motivation {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-motivation::after {
+    display: none;
   }
 
   .hero h1 {
@@ -992,13 +1236,28 @@ footer a:hover {
     padding-left: 20px;
   }
 
+  .motivation-mission-section::before {
+    top: 25%;
+  }
+
   .mission-grid,
   .benefits-grid,
   .contact-grid,
   .comparison-grid,
-  .procedure-grid {
+  .procedure-grid,
+  .team-grid,
+  .exec-leadership-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .exec-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .exec-photo-inner {
+    margin: 0 auto;
   }
 
   /* Mobile adjustments for contact photos */
@@ -1056,7 +1315,8 @@ footer a:hover {
   }
 
   .mission-grid,
-  .benefits-grid {
+  .benefits-grid,
+  .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
